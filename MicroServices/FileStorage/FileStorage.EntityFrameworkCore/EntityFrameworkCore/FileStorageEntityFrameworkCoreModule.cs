@@ -17,7 +17,7 @@ namespace FileStorage.EntityFrameworkCore
         {
             Configure<AbpDbContextOptions>(options =>
             {
-                options.UseSqlServer();
+                options.UseNpgsql();
             });
 
             context.Services.AddAbpDbContext<FileStorageDbContext>(options =>

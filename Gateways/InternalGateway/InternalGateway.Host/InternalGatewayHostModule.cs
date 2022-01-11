@@ -16,7 +16,7 @@ using Volo.Abp;
 using Volo.Abp.AspNetCore.Serilog;
 using Volo.Abp.Autofac;
 using Volo.Abp.EntityFrameworkCore;
-using Volo.Abp.EntityFrameworkCore.SqlServer;
+using Volo.Abp.EntityFrameworkCore.PostgreSql;
 using Volo.Abp.Identity;
 using Volo.Abp.Modularity;
 using Volo.Abp.Security.Claims;
@@ -26,7 +26,7 @@ namespace InternalGateway
     [DependsOn(
         typeof(AbpAutofacModule),
         typeof(AbpIdentityHttpApiModule),
-        typeof(AbpEntityFrameworkCoreSqlServerModule),
+        typeof(AbpEntityFrameworkCorePostgreSqlModule),
         typeof(AbpAspNetCoreSerilogModule)
     )]
     public class InternalGatewayHostModule : AbpModule
@@ -105,7 +105,7 @@ namespace InternalGateway
         {
             Configure<AbpDbContextOptions>(options =>
             {
-                options.UseSqlServer();
+                options.UseNpgsql();
             });
         }
 

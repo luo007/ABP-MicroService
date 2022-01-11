@@ -25,7 +25,7 @@ namespace Business.EntityFrameworkCore
         {
             Configure<AbpDbContextOptions>(options =>
             {
-                options.UseSqlServer();
+                options.UseNpgsql();
             });
 
             context.Services.AddAbpDbContext<BusinessDbContext>(options =>

@@ -98,7 +98,7 @@ namespace BaseService
 
             Configure<AbpDbContextOptions>(options =>
             {
-                options.UseSqlServer();
+                options.UseNpgsql();
             });
 
             //context.Services.AddStackExchangeRedisCache(options =>

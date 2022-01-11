@@ -18,7 +18,7 @@ using Volo.Abp.AspNetCore.Serilog;
 using Volo.Abp.Autofac;
 using Volo.Abp.Caching;
 using Volo.Abp.Data;
-using Volo.Abp.EntityFrameworkCore.SqlServer;
+using Volo.Abp.EntityFrameworkCore.PostgreSql;
 using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
 using Volo.Abp.MultiTenancy;
@@ -29,7 +29,7 @@ namespace FileStorage
 {
     [DependsOn(
         typeof(AbpAutofacModule),
-        typeof(AbpEntityFrameworkCoreSqlServerModule),
+        typeof(AbpEntityFrameworkCorePostgreSqlModule),
         typeof(FileStorageApplicationModule),
         typeof(FileStorageEntityFrameworkCoreModule),
         typeof(AbpAspNetCoreMultiTenancyModule),
